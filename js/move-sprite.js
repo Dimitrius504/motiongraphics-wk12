@@ -7,18 +7,18 @@ $(document).ready(function () {
 
     switch (keyCode) {
       case "ArrowUp":
-        document.getElementById("dude").className = "up";
+        document.getElementById("sonic").className = "up";
         break;
       case "ArrowDown":
-        document.getElementById("dude").className = "down";
+        document.getElementById("sonic").className = "down";
         break;
 
       case "ArrowLeft":
-        document.getElementById("dude").className = "left";
+        document.getElementById("sonic").className = "left";
         break;
 
       case "ArrowRight":
-        document.getElementById("dude").className = "right";
+        document.getElementById("sonic").className = "right";
         break;
     }
     /* STEP 8a: Build out the cases for each of the arrow keys */
@@ -28,7 +28,7 @@ $(document).ready(function () {
 });
   document.addEventListener("keyup", () => {
 
-	document.getElementById('dude').className('go');
+	document.getElementById('sonic').className('go');
 
     });
 });

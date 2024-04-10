@@ -1,86 +1,63 @@
 @charset "UTF-8";
 body {
-	font-family: sans-serif;
+  font-family: sans-serif;
 }
 /* STEP 1: Style the dude */
-#dude {
-	width: 58px;
-	height: 75px;
-	background: url('../images/sprite-sheet.png') left top;
+#sonic {
+	width: 135px;
+	height: 194px;
+	background: url("../images/sonic.png") left -277px top -16px;
+  background: url("../images/sonic.png");
 }
-/* STEP 3a: Add a class that binds the animation to the element (you'll need to manually add the class in the HTML) */
-.up {
-	animation: up steps(3) 0.5s infinite;
-
-}
-
-.right {
-	animation: right steps(3) 0.5s infinite;
-	background-position-y: -72px;
-	background: url('../images/sprite-sheet.png') left -72px top;
-}
-
-.left {
-	animation: left steps(3) 0.5s infinite;
-	background-position-y: -72px;
+.constant {
+	animation: constant steps(2) 3s infinite;
+	animation-delay: 1s; /* Adjust delay as needed */
 }
 
 .down {
-	animation: down steps(3) 0.5s infinite;
+	animation: down steps(2) 1s 1;
+	/* background: url("../images/sonic.png") left -30 bottom -990; */
+  }
 
-}
-
-.go {
-	animation: go steps(3) 1.5s infinite;
-
-}
 /* STEP 3b: To get the frame-by-frame animation effect, we add the steps() timing function */
 
-/* STEP 2: Create a keyframe rule that animates the background position of the sprite sheet */
 @keyframes down {
+  0% {
+    /* background-position: -277px -12px; */
+    width: 135px;
+    height: 194px;
+    background: url("../images/sonic.png") left -20px top -640px;
+  }
+   50% {
+	width: 135px;
+    height: 194px;
+    background: url("../images/sonic.png") left -290px top -640px;
+  }
+  100% {
+	width: 120px;
+    height: 198px;
+    background: url("../images/sonic.png") left -590px top -700px;
+  }
+  
+}
 
-	100% {
-		background-position-x: -180px;
-	}
-}
-/* STEP 4: Complete the animations for right, left and up (then proceed to the HTML file) */
-@keyframes right {
+@keyframes constant {
 	0% {
-		background-position-y: -72;
-		background-position-x: 0;
+	  width: 135px;
+	  height: 194px;
+	  background: url("../images/sonic.png") left -277px top -16px;
+	}
+	 50% {
+	  width: 105px;
+	  height: 194px;
+	  background: url("../images/sonic.png") left -553px top -16px;
 	}
 	100% {
-		background-position-y: -72;
-		background-position-x: -180px;
+	  width: 105px;
+	  height: 194px;
+	  background-position-x: -790px;
+	  background-position-y: -16px;
 	}
-}
-@keyframes left {
-	0% {
-		background-position-y: -155px;
-		background-position-x: 0;
-	}
-	100% {
-		background-position-y: -155px;
-		background-position-x: -180px;
-	}
-}
-@keyframes up {
-	0% {
-		background-position-y: -238px;
-		background-position-x: 0;
-	}
-	100% {
-		background-position-y: -238px;
-		background-position-x: -180px;
-	}
-}
-@keyframes up {
-	0% {
-		background-position-y: 0;
-		background-position-x: 0;
-	}
-	100% {
-		background-position-y: -238px;
-		background-position-x: 0;
-	}
-}
+  
+	
+  }
